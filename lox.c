@@ -11,11 +11,11 @@ const int  WIDTH  =  1000;
 const int  HEIGHT =  1000;                
 
 #ifdef FUN
-    const double MAX_ITER   =     1;           
-    const double RAD        =     0.1     ;
+     double MAX_ITER   =     1;           
+     double RAD        =     0.1     ;
 #else
-    const double MAX_ITER   =     512;           
-    const double RAD        =     100;
+     double MAX_ITER   =     512;           
+     double RAD        =     100;
 #endif                                  
 
 void mandelbrot (sfUint8* pixels , double offsetX , double offsetY , double zoom)
@@ -34,10 +34,10 @@ void mandelbrot (sfUint8* pixels , double offsetX , double offsetY , double zoom
                 iter++;
             }
 
-                double smooth = iter + 1 - log2 (log2 (cabs (z)));
-                double t = smooth / MAX_ITER;
+                // double smooth = iter + 1 - log2 (log2 (cabs (z)));
+                double t = iter / MAX_ITER;
 
-                
+
                 unsigned char r =  (unsigned char) (sqrt (t) * 255);
                 unsigned char g =  (unsigned char) (t * t * t * 255);
                 unsigned char b =  (unsigned char) (sin (3.1415 * t) * 255);
