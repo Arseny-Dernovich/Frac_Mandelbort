@@ -12,11 +12,11 @@ const int  WIDTH  =  1000;
 const int  HEIGHT =  1000;
 
 #ifdef FUN
-    double MAX_ITER   =     1;           
-    double RAD        =     0.1     ;
+    const   double MAX_ITER   =     1;           
+    const   double RAD        =     0.1     ;
 #else
-    double MAX_ITER   =     512;           
-    double RAD        =     100;
+    const   double MAX_ITER   =     512;           
+    const   double RAD        =     100;
 #endif
 
 
