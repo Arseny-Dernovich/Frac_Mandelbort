@@ -159,17 +159,15 @@ int main ()
         if (sfKeyboard_isKeyPressed(sfKeyUp)) scaleY *= 1.05;    
         if (sfKeyboard_isKeyPressed(sfKeyDown)) scaleY /= 1.05;  
 
-// #define FUN
 
-         #ifdef FUN
+
+        #ifdef FUN
             angle += 0.08   ;
             if  (angle > 2 * M_PI) angle -= 2 * M_PI;
             offsetX = 0;
         #endif
 
-        // Вычисляем новые координаты с учётом вращения
-        // double rotatedX = offsetX * cos(angle) - offsetY * sin(angle);
-        // double rotatedY = offsetX * sin(angle) + offsetY * cos(angle);
+        
 
         mandelbrot (pixels , offsetX , offsetY , zoom , angle , scaleX , scaleY);
         sfTexture_updateFromPixels (texture , pixels , WIDTH , HEIGHT , 0 , 0);
