@@ -2,7 +2,8 @@
 #include <SFML/Window.h>
 #include <math.h>
 #include <stdio.h>
-#include <complex.h>
+#include <complex>
+using namespace std;
 #include <stdlib.h>
 #include <time.h>
 #include <stdint.h>
@@ -10,7 +11,7 @@
 const int  WIDTH  =  1000;
 const int  HEIGHT =  1000;                
 
-#ifdef FUN
+#ifdef FUN                                      
      double MAX_ITER   =     1;           
      double RAD        =     0.1     ;
 #else
@@ -25,11 +26,11 @@ void mandelbrot (sfUint8* pixels , double offsetX , double offsetY , double zoom
 
             double cr =  (x - WIDTH / 2.0) * 4.0 / WIDTH / zoom + offsetX;
             double ci =  (y - WIDTH / 2.0) * 4.0 / HEIGHT / zoom + offsetY;
-            double complex z = 0;
-            double complex c = cr + ci * I;
+            complex<double> z = 0;
+            complex<double> c = complex<double>(cr, ci);
             int iter = 0;
 
-            while  (cabs (z) <= 2 && iter < MAX_ITER) {
+            while  (abs (z) <= 2 && iter < MAX_ITER) {
                 z = z * z + c;
                 iter++;
             }
